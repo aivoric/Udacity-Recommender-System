@@ -18,8 +18,8 @@ This is a project provided by Udacity in collaboration with IBM. The goal of the
 ## Contents
 The project is organized along the following steps:
 
-I. Exploratory Data Analysis
-II. Rank Based Recommendations
-III. User-User Based Collaborative Filtering
-IV. Content Based Recommendations (EXTRA - NOT REQUIRED)
-V. Matrix Factorization
+* I. Exploratory Data Analysis
+* II. Rank Based Recommendations
+* III. User-User Based Collaborative Filtering
+* IV. Content Based Recommendations (EXTRA - NOT REQUIRED)
+* V. Matrix Factorization
