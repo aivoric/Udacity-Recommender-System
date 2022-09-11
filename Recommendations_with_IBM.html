@@ -17590,8 +17590,17 @@ class="
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>The accuracy the of the prediction for the training data set tends to increase towards one hundred percent as the number of latent features increases. However, the opposite happens for the testing data set. This could be because only 20 out of over 4000 users in the training data set were also testing data set making it quite inbalanced.</li>
-<li>Generally for new users it is probably better to show the most popular articles.</li>
-<li>Finally, the best thing we can do is ultimately run A/B tests to see which algorithms perform best in practice. That would be the most reliable solution.</li>
+<li>The data set is also very small and we can't base any conclusions from it. As suggested below it is better to run an A/B test in online mode to see how people react to different recommendations engines. There we could measure a much more accurate metric, e.g. &quot;number of clicks&quot; on the recommended articles.</li>
+<li>If we needed to start somewhere immediately, it would probably be best to show the most popular articles to new users (there is a reason why they are most popular).</li>
+<li>Finally, the best thing we can do is ultimately to run A/B tests to see which algorithms perform best in practice. That would be the most reliable solution. Below are additional thoughts regarding an A/B test:<ul>
+<li>Split the users into 2 groups: those who see results based on a collaborative filtering model and those who see results based on the SVD model.</li>
+<li>We would see success if users start to engage more with articles from one recommendation engine vs the other.</li>
+<li>In practice we can set this up by using a cookie-based segmentation method to randomly assign users to one of the two recommendation engines.</li>
+<li>We would then monitor these two groups and evaluate them based on for example the &quot;number of clicks&quot; / &quot;number of cookies&quot;. We have to use a ratio since the cookie split may not produce a percect 50/50 split (i.e. the groups might be slightly unbalanced)</li>
+<li>If one of the groups performs better we would expect to see a higher ratio for &quot;number of clicks&quot; / &quot;number of cookies&quot;.</li>
+<li>Finally, it would be important to measure the level of significance and we should expect a Type I error of lower than 0.05</li>
+</ul>
+</li>
 </ul>
 
 </div>
